@@ -19,8 +19,7 @@ void inc_score_count()
         {
             g_current_speedup *= SPEEDUP_STEP;
             g_current_speedup = MAX(g_current_speedup, SPEEDUP_MIN);
-        }        
-        printf("speedup: %f\n", g_current_speedup);
+        }
     }
 }
 

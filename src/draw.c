@@ -1871,7 +1871,6 @@ void game_draw_debug_info()
 
 void game_draw()
 {
-    //printf("Draw Begin\n");
     graphics_begin_draw();
 
     graphics_clear(COLOR_BACKGROUND_2);
@@ -1904,5 +1903,4 @@ void game_draw()
     game_draw_debug_info();
 
     graphics_end_draw();
-    //printf("Draw End\n");
 }

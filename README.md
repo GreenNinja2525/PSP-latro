@@ -1,6 +1,6 @@
 # PSPalatro
 
-This is a limited implementation of the game **Balatro** for **Sony's Playstation Portable** console.
+This is a limited implementation of the game **Balatro** for **Sony's Playstation Portable** console.  
 The project is for legitimate owners of a **Balatro** copy who wish to experience a partial implementation of the game in the PSP.
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/qRNbH5ELMnE/0.jpg)](https://www.youtube.com/watch?v=qRNbH5ELMnE)

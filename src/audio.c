@@ -79,7 +79,6 @@ void audio_update()
 {
     if (g_audio_buffer.ogg_id > -1 && g_audio_buffer.written < AUDIO_BUFFER_CHUNKS)
     {
-        // printf("Writing in %d in %d... (written slots: %d)\n", g_audio_buffer_count[g_audio_buffer_write_pos], g_audio_buffer_write_pos, g_audio_buffer_written);
         int current_section;
         long ret = 0, total = 0;
         char *buf_ptr = temp_buffer;
@@ -94,8 +93,6 @@ void audio_update()
             total += ret;
             buf_ptr += ret;
         }
-
-        // printf("src_buffer_size: %d\n", g_audio_buffer.src_buffer_size);
 
         struct sample_t *dst = (struct sample_t *)g_audio_buffer.chunks[g_audio_buffer.write_pos].data;
         struct sample_t *src = (struct sample_t *)temp_buffer;
@@ -128,14 +125,11 @@ void audio_update()
             i_src += inc;
         }
 
-        // printf("last index: %d\n", index);
-
         g_audio_buffer.write_pos = (g_audio_buffer.write_pos + 1) % AUDIO_BUFFER_CHUNKS;
         g_audio_buffer.written++;
     }
     else
     {
-        // printf("Waiting in %d to write...\n", g_audio_buffer_write_pos);
         g_debug_info.audio_wait_write++;
     }
 }
