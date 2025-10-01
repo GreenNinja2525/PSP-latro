@@ -2,7 +2,7 @@ name: EBOOT Build
 
 on:
   push:
-    branches: [ main ]   # Runs only on pushes to main
+    branches: [ main, master ]   # Runs only on pushes to main
 
 jobs:
   build:
