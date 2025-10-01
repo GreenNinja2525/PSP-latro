@@ -2,7 +2,7 @@ name: PSP Build
 
 on:
   push:
-    branches: [ main ]   # Runs only on pushes to main
+    branches: [ main ]
 
 jobs:
   build:
@@ -26,5 +26,5 @@ jobs:
       - name: Upload PSP build artifact
         uses: actions/upload-artifact@v4
         with:
-          name: PSPalatro-build
+          name: PSP-latro-build
           path: EBOOT.PBP
