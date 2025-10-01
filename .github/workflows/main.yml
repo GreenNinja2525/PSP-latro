@@ -1,0 +1,30 @@
+name: EBOOT Build
+
+on:
+  push:
+    branches: [ main ]   # Runs only on pushes to main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: pspdev/pspdev:latest   # Official PSP toolchain image
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup PSP environment
+        run: |
+          echo "PSPDEV=/usr/local/pspdev" >> $GITHUB_ENV
+          echo "/usr/local/pspdev/bin" >> $GITHUB_PATH
+          echo "/usr/local/pspdev/psp/bin" >> $GITHUB_PATH
+
+      - name: Build project
+        run: make
+
+      - name: Upload PSP build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: PSPalatro-build
+          path: EBOOT.PBP
